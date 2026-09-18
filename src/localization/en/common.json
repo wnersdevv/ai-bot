@@ -1,0 +1,18 @@
+{
+  "ai.panel.title": "🤖 WNERSAI",
+  "ai.panel.model": "Model",
+  "ai.panel.provider": "Provider",
+  "ai.panel.conversation": "Conversation",
+  "ai.panel.active": "Active",
+  "ai.panel.language": "Language",
+  "buttons.model": "🤖 Model",
+  "buttons.provider": "🌐 Provider",
+  "buttons.memory": "🧠 Memory",
+  "buttons.reset": "🗑️ Reset",
+  "buttons.stats": "📊 Stats",
+  "buttons.settings": "⚙️ Settings",
+  "errors.provider_unreachable": "❌ The AI provider is currently unreachable. Please try again shortly.",
+  "errors.no_provider_configured": "❌ You haven't configured an AI provider yet. Use /ayarla.",
+  "memory.cleared": "🧠 Your memory has been cleared.",
+  "conversation.reset": "🗑️ Conversation has been reset."
+}

@@ -1,0 +1,18 @@
+{
+  "ai.panel.title": "🤖 WNERSAI",
+  "ai.panel.model": "Modelo",
+  "ai.panel.provider": "Proveedor",
+  "ai.panel.conversation": "Conversación",
+  "ai.panel.active": "Activa",
+  "ai.panel.language": "Idioma",
+  "buttons.model": "🤖 Modelo",
+  "buttons.provider": "🌐 Proveedor",
+  "buttons.memory": "🧠 Memoria",
+  "buttons.reset": "🗑️ Reiniciar",
+  "buttons.stats": "📊 Estadísticas",
+  "buttons.settings": "⚙️ Ajustes",
+  "errors.provider_unreachable": "❌ No se puede acceder al proveedor de IA en este momento. Inténtalo de nuevo en breve.",
+  "errors.no_provider_configured": "❌ Todavía no has configurado un proveedor de IA. Usa /ayarla.",
+  "memory.cleared": "🧠 Tu memoria ha sido borrada.",
+  "conversation.reset": "🗑️ La conversación se ha reiniciado."
+}

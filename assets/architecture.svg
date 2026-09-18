@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" width="1100" height="700" role="img" aria-label="WNERSAI sistem mimarisi: Discord ve Web API girişlerinden AI Gateway'e, oradan sağlayıcılara ve veri katmanına.">
+  <title>WNERSAI sistem mimarisi</title>
+
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#070A14"/>
+      <stop offset="100%" stop-color="#0A0F20"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#5865F2" fill-opacity="0.8"/>
+    </marker>
+    <marker id="arrowCyan" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#22D3EE" fill-opacity="0.85"/>
+    </marker>
+    <pattern id="agrid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0 L0 0 0 44" fill="none" stroke="#5865F2" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1100" height="700" fill="url(#abg)"/>
+  <rect width="1100" height="700" fill="url(#agrid)"/>
+
+  <text x="40" y="52" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22"
+        font-weight="700" letter-spacing="1" fill="#EDF1FB">Sistem mimarisi</text>
+  <text x="40" y="76" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13.5"
+        fill="#7C8AB5">Her giriş noktası aynı servis katmanına iner, iş mantığı tek yerde durur.</text>
+
+  <!-- ─── layer 1: entry points ─── -->
+  <text x="40" y="126" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5"
+        font-weight="700" letter-spacing="2" fill="#5865F2">GİRİŞ</text>
+
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+    <g transform="translate(40, 142)">
+      <rect width="215" height="72" rx="12" fill="#101935" stroke="#5865F2" stroke-opacity="0.5"/>
+      <text x="20" y="31" font-size="15" font-weight="650" fill="#E7ECF7">Slash komutları</text>
+      <text x="20" y="53" font-size="12.5" fill="#7C8AB5">/ai /model /ayarla /botlar</text>
+    </g>
+    <g transform="translate(285, 142)">
+      <rect width="215" height="72" rx="12" fill="#101935" stroke="#5865F2" stroke-opacity="0.5"/>
+      <text x="20" y="31" font-size="15" font-weight="650" fill="#E7ECF7">Prefix komutları</text>
+      <text x="20" y="53" font-size="12.5" fill="#7C8AB5">w!ai — sunucuya göre değişir</text>
+    </g>
+    <g transform="translate(530, 142)">
+      <rect width="215" height="72" rx="12" fill="#101935" stroke="#5865F2" stroke-opacity="0.5"/>
+      <text x="20" y="31" font-size="15" font-weight="650" fill="#E7ECF7">Butonlar ve menüler</text>
+      <text x="20" y="53" font-size="12.5" fill="#7C8AB5">panel, select, modal</text>
+    </g>
+    <g transform="translate(775, 142)">
+      <rect width="215" height="72" rx="12" fill="#101935" stroke="#22D3EE" stroke-opacity="0.5"/>
+      <text x="20" y="31" font-size="15" font-weight="650" fill="#E7ECF7">Web API</text>
+      <text x="20" y="53" font-size="12.5" fill="#7C8AB5">POST /v1/chat</text>
+    </g>
+  </g>
+
+  <g stroke="#5865F2" stroke-opacity="0.55" stroke-width="1.8" fill="none" marker-end="url(#arrow)">
+    <path d="M147 214 L147 252 L520 252 L520 284"/>
+    <path d="M392 214 L392 252"/>
+    <path d="M637 214 L637 252"/>
+  </g>
+  <path d="M882 214 L882 252 L560 252" stroke="#22D3EE" stroke-opacity="0.6" stroke-width="1.8"
+        fill="none" marker-end="url(#arrowCyan)"/>
+
+  <!-- ─── layer 2: service ─── -->
+  <text x="40" y="306" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5"
+        font-weight="700" letter-spacing="2" fill="#5865F2">SERVİS</text>
+
+  <g transform="translate(300, 284)">
+    <rect width="440" height="66" rx="12" fill="#14204A" stroke="#22D3EE" stroke-opacity="0.6" stroke-width="1.5"/>
+    <text x="220" y="30" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif"
+          font-size="16.5" font-weight="700" letter-spacing="1.4" fill="#EDF1FB">AIService</text>
+    <text x="220" y="51" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif"
+          font-size="12.5" fill="#93A1C8">tek iş mantığı girişi — slash da prefix de API de buraya iner</text>
+  </g>
+
+  <path d="M520 350 L520 392" stroke="#5865F2" stroke-opacity="0.6" stroke-width="1.8" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- ─── layer 3: gateway internals ─── -->
+  <g transform="translate(180, 392)">
+    <rect width="740" height="104" rx="14" fill="#0E1730" stroke="#5865F2" stroke-opacity="0.65" stroke-width="1.5"/>
+    <text x="24" y="30" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="14"
+          font-weight="700" letter-spacing="1.6" fill="#A9B6DC">PROVIDER ROUTER</text>
+
+    <g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600">
+      <g transform="translate(24, 48)">
+        <rect width="128" height="38" rx="8" fill="#152046" stroke="#5865F2" stroke-opacity="0.4"/>
+        <text x="64" y="24" text-anchor="middle" fill="#D7DEF0">model seçimi</text>
+      </g>
+      <g transform="translate(168, 48)">
+        <rect width="128" height="38" rx="8" fill="#152046" stroke="#5865F2" stroke-opacity="0.4"/>
+        <text x="64" y="24" text-anchor="middle" fill="#D7DEF0">zaman aşımı</text>
+      </g>
+      <g transform="translate(312, 48)">
+        <rect width="128" height="38" rx="8" fill="#152046" stroke="#5865F2" stroke-opacity="0.4"/>
+        <text x="64" y="24" text-anchor="middle" fill="#D7DEF0">tekrar deneme</text>
+      </g>
+      <g transform="translate(456, 48)">
+        <rect width="128" height="38" rx="8" fill="#152046" stroke="#F97362" stroke-opacity="0.45"/>
+        <text x="64" y="24" text-anchor="middle" fill="#F7C9C1">devre kesici</text>
+      </g>
+      <g transform="translate(600, 48)">
+        <rect width="116" height="38" rx="8" fill="#152046" stroke="#22D3EE" stroke-opacity="0.45"/>
+        <text x="58" y="24" text-anchor="middle" fill="#B6ECF6">yedek zincir</text>
+      </g>
+    </g>
+  </g>
+
+  <g stroke="#5865F2" stroke-opacity="0.5" stroke-width="1.8" fill="none" marker-end="url(#arrow)">
+    <path d="M300 496 L300 540"/>
+    <path d="M440 496 L440 540"/>
+    <path d="M580 496 L580 540"/>
+    <path d="M720 496 L720 540"/>
+    <path d="M860 496 L860 540"/>
+  </g>
+
+  <!-- ─── layer 4: providers ─── -->
+  <text x="40" y="560" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5"
+        font-weight="700" letter-spacing="2" fill="#5865F2">SAĞLAYICI</text>
+
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" font-weight="600">
+    <g transform="translate(240, 540)">
+      <rect width="120" height="42" rx="9" fill="#0F1730" stroke="#10A37F" stroke-opacity="0.5"/>
+      <text x="60" y="26" text-anchor="middle" fill="#D7DEF0">OpenAI</text>
+    </g>
+    <g transform="translate(380, 540)">
+      <rect width="120" height="42" rx="9" fill="#0F1730" stroke="#4285F4" stroke-opacity="0.5"/>
+      <text x="60" y="26" text-anchor="middle" fill="#D7DEF0">Gemini</text>
+    </g>
+    <g transform="translate(520, 540)">
+      <rect width="120" height="42" rx="9" fill="#0F1730" stroke="#D97757" stroke-opacity="0.5"/>
+      <text x="60" y="26" text-anchor="middle" fill="#D7DEF0">Claude</text>
+    </g>
+    <g transform="translate(660, 540)">
+      <rect width="120" height="42" rx="9" fill="#0F1730" stroke="#C9D2E6" stroke-opacity="0.5"/>
+      <text x="60" y="26" text-anchor="middle" fill="#D7DEF0">Grok</text>
+    </g>
+    <g transform="translate(800, 540)">
+      <rect width="120" height="42" rx="9" fill="#0F1730" stroke="#A78BFA" stroke-opacity="0.5"/>
+      <text x="60" y="26" text-anchor="middle" fill="#D7DEF0">Custom</text>
+    </g>
+  </g>
+
+  <!-- ─── data layer ─── -->
+  <g transform="translate(40, 618)">
+    <rect width="1020" height="58" rx="12" fill="#0C1226" stroke="#5865F2" stroke-opacity="0.3"/>
+    <text x="24" y="24" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5"
+          font-weight="700" letter-spacing="2" fill="#5865F2">VERİ KATMANI</text>
+    <text x="24" y="45" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#93A1C8">
+      MongoDB — kullanıcılar, botlar, konuşmalar, bellek, kullanım kayıtları, şifrelenmiş anahtarlar
+    </text>
+    <text x="1000" y="45" text-anchor="end" font-family="Inter, 'Segoe UI', Arial, sans-serif"
+          font-size="13" fill="#93A1C8">Redis — kuyruk, devre kesici, hız limiti</text>
+  </g>
+</svg>

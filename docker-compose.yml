@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - '27017:27017'
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+
+  # A single WNERSAI process handles bots + the /v1 API. Scale by running
+  # multiple replicas with distinct WORKER_INDEX values (0..WORKER_COUNT-1)
+  # once your bot count justifies sharding - see WorkerManager.
+  wnersai:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://mongo:27017/wnersai
+      REDIS_URL: redis://redis:6379
+      ENCRYPTION_KEY: ${ENCRYPTION_KEY}
+      API_KEY_HASH_SECRET: ${API_KEY_HASH_SECRET}
+      WORKER_INDEX: 0
+      WORKER_COUNT: 1
+      API_PORT: 3000
+    ports:
+      - '3000:3000'
+
+volumes:
+  mongo_data:

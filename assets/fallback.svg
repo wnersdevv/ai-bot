@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 560" width="1100" height="560" role="img" aria-label="Yedek zincir ve devre kesici: birincil sağlayıcı hata verdiğinde istek sıradaki sağlayıcıya geçer; sürekli hata veren sağlayıcı geçici olarak devre dışı bırakılır.">
+  <title>Yedek zincir ve devre kesici</title>
+
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#070A14"/>
+      <stop offset="100%" stop-color="#0A0F20"/>
+    </linearGradient>
+    <marker id="fArrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#5865F2" fill-opacity="0.85"/>
+    </marker>
+    <marker id="fArrowRed" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#F97362" fill-opacity="0.9"/>
+    </marker>
+    <marker id="fArrowGreen" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#34D399" fill-opacity="0.9"/>
+    </marker>
+    <pattern id="fgrid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0 L0 0 0 44" fill="none" stroke="#5865F2" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1100" height="560" fill="url(#fbg)"/>
+  <rect width="1100" height="560" fill="url(#fgrid)"/>
+
+  <text x="40" y="50" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="22"
+        font-weight="700" fill="#EDF1FB">Bir sağlayıcı düştüğünde ne oluyor</text>
+  <text x="40" y="74" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13.5" fill="#7C8AB5">
+    Yedek zincir yalnızca kullanıcı açtıysa ve o sağlayıcının anahtarı varsa devreye girer.
+  </text>
+
+  <!-- ══ fallback chain ══ -->
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+    <g transform="translate(40, 116)">
+      <rect width="150" height="58" rx="11" fill="#101935" stroke="#22D3EE" stroke-opacity="0.55"/>
+      <text x="75" y="26" text-anchor="middle" font-size="13.5" font-weight="650" fill="#E7ECF7">istek</text>
+      <text x="75" y="44" text-anchor="middle" font-size="11.5" fill="#7C8AB5">/ai Merhaba</text>
+    </g>
+
+    <path d="M190 145 L246 145" stroke="#5865F2" stroke-opacity="0.7" stroke-width="2" fill="none" marker-end="url(#fArrow)"/>
+
+    <!-- primary: fails -->
+    <g transform="translate(252, 116)">
+      <rect width="176" height="58" rx="11" fill="#1B1220" stroke="#F97362" stroke-opacity="0.65" stroke-width="1.5"/>
+      <text x="88" y="25" text-anchor="middle" font-size="13.5" font-weight="650" fill="#F7C9C1">birincil — OpenAI</text>
+      <text x="88" y="44" text-anchor="middle" font-size="11.5" fill="#C98F84">zaman aşımı, 2 deneme boşa gitti</text>
+    </g>
+
+    <path d="M428 145 L484 145" stroke="#F97362" stroke-opacity="0.75" stroke-width="2" fill="none" marker-end="url(#fArrowRed)"/>
+
+    <!-- secondary: succeeds -->
+    <g transform="translate(490, 116)">
+      <rect width="176" height="58" rx="11" fill="#0E1D19" stroke="#34D399" stroke-opacity="0.65" stroke-width="1.5"/>
+      <text x="88" y="25" text-anchor="middle" font-size="13.5" font-weight="650" fill="#A9EFD2">yedek — Gemini</text>
+      <text x="88" y="44" text-anchor="middle" font-size="11.5" fill="#7FC9AC">yanıtladı, 1.24 sn</text>
+    </g>
+
+    <path d="M666 145 L722 145" stroke="#34D399" stroke-opacity="0.75" stroke-width="2" fill="none" marker-end="url(#fArrowGreen)"/>
+
+    <g transform="translate(728, 116)">
+      <rect width="176" height="58" rx="11" fill="#101935" stroke="#5865F2" stroke-opacity="0.55"/>
+      <text x="88" y="25" text-anchor="middle" font-size="13.5" font-weight="650" fill="#E7ECF7">kullanıcıya yanıt</text>
+      <text x="88" y="44" text-anchor="middle" font-size="11.5" fill="#7C8AB5">kesinti fark edilmedi</text>
+    </g>
+
+    <!-- unused tertiary -->
+    <g transform="translate(490, 196)">
+      <rect width="176" height="44" rx="10" fill="#0C1226" stroke="#5865F2" stroke-opacity="0.28" stroke-dasharray="4 4"/>
+      <text x="88" y="27" text-anchor="middle" font-size="12" fill="#6F7DA8">üçüncül — Claude (kullanılmadı)</text>
+    </g>
+    <path d="M578 174 L578 194" stroke="#5865F2" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+  </g>
+
+  <line x1="40" y1="282" x2="1060" y2="282" stroke="#5865F2" stroke-opacity="0.18"/>
+
+  <!-- ══ circuit breaker state machine ══ -->
+  <text x="40" y="320" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16"
+        font-weight="700" fill="#EDF1FB">Sürekli hata veren sağlayıcı devre dışı kalır</text>
+  <text x="40" y="342" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#7C8AB5">
+    Devre kesici durumu Redis'te tutulur, bütün worker süreçleri aynı durumu görür.
+  </text>
+
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+    <!-- CLOSED -->
+    <g transform="translate(70, 388)">
+      <rect width="196" height="94" rx="13" fill="#0E1D19" stroke="#34D399" stroke-opacity="0.6" stroke-width="1.5"/>
+      <text x="98" y="34" text-anchor="middle" font-size="15.5" font-weight="700" letter-spacing="1.6" fill="#A9EFD2">CLOSED</text>
+      <text x="98" y="56" text-anchor="middle" font-size="12" fill="#7FC9AC">normal akış</text>
+      <text x="98" y="76" text-anchor="middle" font-size="11.5" fill="#5E9C85">istekler doğrudan geçer</text>
+    </g>
+
+    <path d="M266 421 L344 421" stroke="#F97362" stroke-opacity="0.8" stroke-width="2" fill="none" marker-end="url(#fArrowRed)"/>
+    <text x="305" y="412" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F97362">5 ardışık hata</text>
+
+    <!-- OPEN -->
+    <g transform="translate(350, 388)">
+      <rect width="196" height="94" rx="13" fill="#1B1220" stroke="#F97362" stroke-opacity="0.65" stroke-width="1.5"/>
+      <text x="98" y="34" text-anchor="middle" font-size="15.5" font-weight="700" letter-spacing="1.6" fill="#F7C9C1">OPEN</text>
+      <text x="98" y="56" text-anchor="middle" font-size="12" fill="#C98F84">geçici olarak kapalı</text>
+      <text x="98" y="76" text-anchor="middle" font-size="11.5" fill="#A6716A">istek hiç gönderilmez</text>
+    </g>
+
+    <path d="M546 421 L624 421" stroke="#EAB308" stroke-opacity="0.8" stroke-width="2" fill="none" marker-end="url(#fArrow)"/>
+    <text x="585" y="412" text-anchor="middle" font-size="11.5" font-weight="600" fill="#EAB308">60 sn bekleme</text>
+
+    <!-- HALF OPEN -->
+    <g transform="translate(630, 388)">
+      <rect width="196" height="94" rx="13" fill="#1C1806" stroke="#EAB308" stroke-opacity="0.6" stroke-width="1.5"/>
+      <text x="98" y="34" text-anchor="middle" font-size="15.5" font-weight="700" letter-spacing="1.6" fill="#F5DE8A">HALF OPEN</text>
+      <text x="98" y="56" text-anchor="middle" font-size="12" fill="#C9AE5E">tek deneme hakkı</text>
+      <text x="98" y="76" text-anchor="middle" font-size="11.5" fill="#9C873F">sağlık kontrolü yapılır</text>
+    </g>
+
+    <!-- success loop back to closed -->
+    <path d="M728 388 C 728 330, 168 330, 168 386" stroke="#34D399" stroke-opacity="0.7"
+          stroke-width="2" fill="none" marker-end="url(#fArrowGreen)"/>
+    <text x="448" y="324" text-anchor="middle" font-size="11.5" font-weight="600" fill="#34D399">başarılı yanıt gelirse tekrar açılır</text>
+
+    <!-- fail back to open -->
+    <path d="M728 482 C 728 522, 448 522, 448 486" stroke="#F97362" stroke-opacity="0.7"
+          stroke-width="2" fill="none" marker-end="url(#fArrowRed)"/>
+    <text x="588" y="540" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F97362">yine hata verirse kapalı kalır</text>
+
+    <!-- note -->
+    <g transform="translate(866, 388)">
+      <rect width="180" height="94" rx="12" fill="#0C1226" stroke="#5865F2" stroke-opacity="0.3"/>
+      <text x="16" y="28" font-size="11.5" font-weight="700" letter-spacing="1.4" fill="#5865F2">SONUÇ</text>
+      <text x="16" y="50" font-size="11.5" fill="#93A1C8">Çöken bir sağlayıcı</text>
+      <text x="16" y="68" font-size="11.5" fill="#93A1C8">bütün sistemi</text>
+      <text x="16" y="86" font-size="11.5" fill="#93A1C8">yavaşlatmaz.</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-label="WNERSAI — WNERSDEV AI Platform. Çoklu sağlayıcı Discord yapay zekâ ağ geçidi.">
+  <title>WNERSAI — WNERSDEV AI Platform</title>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070A14"/>
+      <stop offset="55%" stop-color="#0B1024"/>
+      <stop offset="100%" stop-color="#0A0E1C"/>
+    </linearGradient>
+
+    <linearGradient id="wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#FFFFFF"/>
+      <stop offset="42%" stop-color="#A78BFA"/>
+      <stop offset="78%" stop-color="#5865F2"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+
+    <linearGradient id="railFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5865F2" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#5865F2" stop-opacity="0.55"/>
+    </linearGradient>
+
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#5865F2" stop-opacity="0.55"/>
+      <stop offset="60%"  stop-color="#5865F2" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#5865F2" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="soften" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 L0 0 0 40" fill="none" stroke="#5865F2" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="440" fill="url(#bg)"/>
+  <rect width="1200" height="440" fill="url(#grid)"/>
+  <rect width="1200" height="440" fill="none" stroke="#5865F2" stroke-opacity="0.22" stroke-width="1"/>
+
+  <!-- ambient core light behind the gateway -->
+  <circle cx="510" cy="284" r="200" fill="url(#coreGlow)"/>
+
+  <!-- ══ wordmark block ══ -->
+  <g transform="translate(64, 96)">
+    <text x="0" y="0" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="76" font-weight="800" letter-spacing="10" fill="url(#wordmark)">WNERSAI</text>
+
+    <text x="4" y="34" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="15" font-weight="600" letter-spacing="6.5" fill="#7C8AB5">WNERSDEV AI PLATFORM</text>
+
+    <text x="4" y="70" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+          font-size="18" font-weight="400" fill="#C3CBE4">Discord için çoklu sağlayıcı yapay zekâ ağ geçidi</text>
+  </g>
+
+  <!-- ══ status pill ══ -->
+  <g transform="translate(1000, 56)">
+    <rect x="0" y="0" width="136" height="30" rx="15" fill="#0E1630" stroke="#22D3EE" stroke-opacity="0.35"/>
+    <circle cx="19" cy="15" r="4.5" fill="#22D3EE">
+      <animate attributeName="opacity" values="1;0.25;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="33" y="20" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5"
+          font-weight="600" letter-spacing="0.6" fill="#8FE9F5">gateway aktif</text>
+  </g>
+
+  <!-- ══ routing switchboard ══ -->
+  <g transform="translate(0, 44)">
+
+    <!-- inbound -->
+    <text x="72" y="224" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13"
+          font-weight="600" letter-spacing="1.2" fill="#6F7DA8">gelen istek</text>
+    <line x1="72" y1="240" x2="416" y2="240" stroke="#5865F2" stroke-opacity="0.45" stroke-width="2"/>
+    <circle cx="72" cy="240" r="5" fill="#22D3EE"/>
+    <text x="72" y="266" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5"
+          fill="#57648C">slash komutu, prefix veya Web API</text>
+
+    <!-- gateway core -->
+    <g transform="translate(416, 188)">
+      <rect x="0" y="0" width="188" height="104" rx="14" fill="#101935" stroke="#5865F2" stroke-opacity="0.75" stroke-width="1.5"/>
+      <rect x="0" y="0" width="188" height="104" rx="14" fill="none" stroke="#22D3EE" stroke-opacity="0.25" stroke-width="3" filter="url(#soften)"/>
+      <text x="94" y="42" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif"
+            font-size="19" font-weight="700" letter-spacing="2.4" fill="#EDF1FB">AI GATEWAY</text>
+      <text x="94" y="68" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif"
+            font-size="12" font-weight="500" fill="#7C8AB5">yönlendirme, bellek, güvenlik</text>
+      <line x1="34" y1="84" x2="154" y2="84" stroke="#5865F2" stroke-opacity="0.35" stroke-width="1"/>
+    </g>
+
+    <!-- fan-out rails to providers -->
+    <g fill="none" stroke="url(#railFade)" stroke-width="2">
+      <path d="M604 216 C 700 216, 780 160, 860 160"/>
+      <path d="M604 228 C 700 228, 780 200, 860 200"/>
+      <path d="M604 240 L860 240"/>
+      <path d="M604 252 C 700 252, 780 280, 860 280"/>
+      <path d="M604 264 C 700 264, 780 320, 860 320"/>
+    </g>
+
+    <!-- provider nodes -->
+    <g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="600">
+      <g transform="translate(860, 144)">
+        <rect width="276" height="32" rx="8" fill="#0F1730" stroke="#10A37F" stroke-opacity="0.45"/>
+        <circle cx="18" cy="16" r="5" fill="#10A37F"/>
+        <text x="36" y="21" fill="#D7DEF0">OpenAI</text>
+      </g>
+      <g transform="translate(860, 184)">
+        <rect width="276" height="32" rx="8" fill="#0F1730" stroke="#4285F4" stroke-opacity="0.45"/>
+        <circle cx="18" cy="16" r="5" fill="#4285F4"/>
+        <text x="36" y="21" fill="#D7DEF0">Google Gemini</text>
+      </g>
+      <g transform="translate(860, 224)">
+        <rect width="276" height="32" rx="8" fill="#0F1730" stroke="#D97757" stroke-opacity="0.45"/>
+        <circle cx="18" cy="16" r="5" fill="#D97757"/>
+        <text x="36" y="21" fill="#D7DEF0">Anthropic Claude</text>
+      </g>
+      <g transform="translate(860, 264)">
+        <rect width="276" height="32" rx="8" fill="#0F1730" stroke="#C9D2E6" stroke-opacity="0.45"/>
+        <circle cx="18" cy="16" r="5" fill="#C9D2E6"/>
+        <text x="36" y="21" fill="#D7DEF0">xAI Grok</text>
+      </g>
+      <g transform="translate(860, 304)">
+        <rect width="276" height="32" rx="8" fill="#0F1730" stroke="#A78BFA" stroke-opacity="0.45"/>
+        <circle cx="18" cy="16" r="5" fill="#A78BFA"/>
+        <text x="36" y="21" fill="#D7DEF0">Kendi API'niz</text>
+      </g>
+    </g>
+
+    <!-- the one orchestrated motion: a request enters, routes out, then reroutes on failure -->
+    <circle r="5" fill="#22D3EE">
+      <animateMotion dur="4.6s" repeatCount="indefinite" calcMode="linear" path="M72 240 L416 240"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="4.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle r="4.5" fill="#22D3EE">
+      <animateMotion dur="4.6s" begin="0.9s" repeatCount="indefinite" calcMode="linear" path="M604 240 L860 240"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.8;1" dur="4.6s" begin="0.9s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle r="4.5" fill="#F97362">
+      <animateMotion dur="4.6s" begin="2.5s" repeatCount="indefinite"
+                     path="M604 228 C 700 228, 780 200, 860 200"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.8;1" dur="4.6s" begin="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ══ footer statement ══ -->
+  <line x1="64" y1="392" x2="1136" y2="392" stroke="#5865F2" stroke-opacity="0.18"/>
+  <text x="64" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="14.5" fill="#8A97BE">
+    Bir istek girer, uygun sağlayıcı yanıtlar, biri düşerse sıradaki devralır.
+  </text>
+  <text x="1136" y="418" text-anchor="end" font-family="Inter, 'Segoe UI', Arial, sans-serif"
+        font-size="13" font-weight="600" letter-spacing="2" fill="#5865F2">BUILD THE FUTURE</text>
+</svg>

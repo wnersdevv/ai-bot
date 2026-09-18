@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470" role="img" aria-label="Discord içinde /ai komutunun açtığı WNERSAI paneli: model, sağlayıcı, konuşma durumu ve kontrol butonları.">
+  <title>Discord'da /ai paneli</title>
+
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#070A14"/>
+      <stop offset="100%" stop-color="#0A0F20"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="470" fill="url(#pbg)"/>
+
+  <!-- discord message frame -->
+  <rect x="40" y="36" width="820" height="398" rx="14" fill="#313338" stroke="#22252B" stroke-width="1"/>
+
+  <!-- command echo line -->
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+    <circle cx="74" cy="72" r="16" fill="#5865F2"/>
+    <text x="74" y="78" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">W</text>
+    <text x="102" y="68" font-size="14.5" font-weight="650" fill="#F2F3F5">WNERSAI</text>
+    <rect x="176" y="57" width="42" height="15" rx="3.5" fill="#5865F2"/>
+    <text x="197" y="68" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">BOT</text>
+    <text x="230" y="68" font-size="11.5" fill="#949BA4">bugün 21:04</text>
+    <text x="102" y="90" font-size="13.5" fill="#B5BAC1">/ai</text>
+  </g>
+
+  <!-- embed -->
+  <g transform="translate(102, 106)">
+    <rect x="0" y="0" width="716" height="196" rx="6" fill="#2B2D31"/>
+    <rect x="0" y="0" width="4" height="196" rx="2" fill="#5865F2"/>
+
+    <text x="24" y="36" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17"
+          font-weight="700" fill="#F2F3F5">🤖 WNERSAI</text>
+
+    <!-- embed fields -->
+    <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+      <text x="24" y="76" font-size="12.5" font-weight="700" fill="#F2F3F5">Model</text>
+      <text x="24" y="96" font-size="13" fill="#DBDEE1">gemini-2.0-flash</text>
+
+      <text x="264" y="76" font-size="12.5" font-weight="700" fill="#F2F3F5">Sağlayıcı</text>
+      <text x="264" y="96" font-size="13" fill="#DBDEE1">Google Gemini</text>
+
+      <text x="504" y="76" font-size="12.5" font-weight="700" fill="#F2F3F5">Konuşma</text>
+      <text x="504" y="96" font-size="13" fill="#DBDEE1">Aktif</text>
+
+      <text x="24" y="136" font-size="12.5" font-weight="700" fill="#F2F3F5">Dil</text>
+      <text x="24" y="156" font-size="13" fill="#DBDEE1">Türkçe</text>
+
+      <text x="264" y="136" font-size="12.5" font-weight="700" fill="#F2F3F5">Bellek</text>
+      <text x="264" y="156" font-size="13" fill="#DBDEE1">14 mesaj + özet</text>
+
+      <text x="504" y="136" font-size="12.5" font-weight="700" fill="#F2F3F5">Yedek zincir</text>
+      <text x="504" y="156" font-size="13" fill="#DBDEE1">açık — OpenAI, Claude</text>
+    </g>
+  </g>
+
+  <!-- button rows -->
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13.5" font-weight="550">
+    <g transform="translate(102, 318)">
+      <rect width="118" height="34" rx="4" fill="#4E5058"/>
+      <text x="59" y="22" text-anchor="middle" fill="#FFFFFF">🤖 Model</text>
+    </g>
+    <g transform="translate(228, 318)">
+      <rect width="134" height="34" rx="4" fill="#4E5058"/>
+      <text x="67" y="22" text-anchor="middle" fill="#FFFFFF">🌐 Sağlayıcı</text>
+    </g>
+    <g transform="translate(370, 318)">
+      <rect width="118" height="34" rx="4" fill="#4E5058"/>
+      <text x="59" y="22" text-anchor="middle" fill="#FFFFFF">🧠 Bellek</text>
+    </g>
+    <g transform="translate(496, 318)">
+      <rect width="118" height="34" rx="4" fill="#DA373C"/>
+      <text x="59" y="22" text-anchor="middle" fill="#FFFFFF">🗑️ Sıfırla</text>
+    </g>
+
+    <g transform="translate(102, 362)">
+      <rect width="134" height="34" rx="4" fill="#5865F2"/>
+      <text x="67" y="22" text-anchor="middle" fill="#FFFFFF">📊 İstatistik</text>
+    </g>
+    <g transform="translate(244, 362)">
+      <rect width="126" height="34" rx="4" fill="#5865F2"/>
+      <text x="63" y="22" text-anchor="middle" fill="#FFFFFF">⚙️ Ayarlar</text>
+    </g>
+  </g>
+</svg>

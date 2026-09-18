@@ -1,0 +1,18 @@
+{
+  "ai.panel.title": "🤖 WNERSAI",
+  "ai.panel.model": "Modell",
+  "ai.panel.provider": "Anbieter",
+  "ai.panel.conversation": "Unterhaltung",
+  "ai.panel.active": "Aktiv",
+  "ai.panel.language": "Sprache",
+  "buttons.model": "🤖 Modell",
+  "buttons.provider": "🌐 Anbieter",
+  "buttons.memory": "🧠 Speicher",
+  "buttons.reset": "🗑️ Zurücksetzen",
+  "buttons.stats": "📊 Statistik",
+  "buttons.settings": "⚙️ Einstellungen",
+  "errors.provider_unreachable": "❌ Der KI-Anbieter ist derzeit nicht erreichbar. Bitte versuchen Sie es später erneut.",
+  "errors.no_provider_configured": "❌ Sie haben noch keinen KI-Anbieter konfiguriert. Verwenden Sie /ayarla.",
+  "memory.cleared": "🧠 Ihr Speicher wurde gelöscht.",
+  "conversation.reset": "🗑️ Unterhaltung wurde zurückgesetzt."
+}

@@ -1,0 +1,18 @@
+{
+  "ai.panel.title": "🤖 WNERSAI",
+  "ai.panel.model": "Model",
+  "ai.panel.provider": "Sağlayıcı",
+  "ai.panel.conversation": "Konuşma",
+  "ai.panel.active": "Aktif",
+  "ai.panel.language": "Dil",
+  "buttons.model": "🤖 Model",
+  "buttons.provider": "🌐 Sağlayıcı",
+  "buttons.memory": "🧠 Bellek",
+  "buttons.reset": "🗑️ Sıfırla",
+  "buttons.stats": "📊 İstatistik",
+  "buttons.settings": "⚙️ Ayarlar",
+  "errors.provider_unreachable": "❌ Yapay zekâ sağlayıcısına şu anda ulaşılamıyor. Lütfen biraz sonra tekrar deneyin.",
+  "errors.no_provider_configured": "❌ Henüz bir yapay zekâ sağlayıcısı ayarlamadınız. /ayarla komutunu kullanın.",
+  "memory.cleared": "🧠 Belleğiniz temizlendi.",
+  "conversation.reset": "🗑️ Konuşma sıfırlandı."
+}
